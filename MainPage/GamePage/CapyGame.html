@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <title>Capybara Game</title>
+    <link id="icon" rel="shortcut icon" href="https://capybaraweb.s3.ap-northeast-2.amazonaws.com/MainPage/Image/CapybaraIcon.png"/>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+  <button style="position: absolute;" onclick="sss()">애니메이션 보기</button>
+  <button style="position: absolute;" onclick="HideStory()">보기</button>
+
+  <div class="GameScreen">
+    <div class="StartScreen">
+      <img id="ArmorCapybara" src="./StartScreenImage/StartIcon.png" alt="">
+      <h2>CapybaraRPG</h2>
+      <button id="GameStartButton" onclick="GameStart()">GameStart</button>
+    </div>
+
+    <div class="RPGScreen">
+      <img id="RPGCharacter" src="./RpgImage/testCapy.png" alt="">
+      <img id="CapybaraSword" src="./RpgImage/DiamondSword.png" alt="">
+      <img id="CapybaraHat" src="./RpgImage/CapybaraHat.png">
+      <img id="KingCapybara" src="./RpgImage/KingCapybara.png" alt="">
+      <img id="HatuneCapybara" src="./RpgImage/HatuneCapybara.png" alt="">
+
+      <div onclick="ShowText()" class="RpgStory">
+        <img id="StoryBox" src="./RpgImage/StroyBox.png">
+        <p id="StoryText"></p>
+        <h6 id="StoryCapybara">카피바라</h6>
+        <div class="triangle"></div>
+      </div>
+
+      <div onclick="tMaWangShowText()" class="MaWangSee">
+        <img id="MaWangStoryBox" src="./RpgImage/StroyBox.png" alt="">
+        <p id="MaWangStoryText"></p>
+        <h6 id="MaWangStoryName">ㅇㅇㅇ</h6>
+      </div>
+    </div>
+  </div>
+</body>
+</html> 

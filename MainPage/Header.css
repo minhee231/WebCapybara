@@ -1,0 +1,54 @@
+.HeaderTable button {
+    background-image: url('./Image/CapyButton.png');
+    background-size: cover;
+}
+
+/* .HeaderTable button:hover {
+    background-size: cover;
+} */
+
+#CapybaraRandom:hover {
+    background-image: url('./Image/ButtonRandomCapybara.png');
+}
+
+#CapybaraGame:hover {
+    background-image: url('./Image/ButtonCapybaraGame.png');
+}
+
+#CapybaraQuiz:hover {
+    background-image: url('./Image/ButtonCapybaraQuiz.png');
+    background-size: 50px;
+}       
+
+#CapybaraAttack:hover {
+    background-image: url('./Image/ButtonCapybaraAttack.png');
+    background-size: cover;
+}
+
+#CapybaraPlay:hover {
+    background-image: url('./Image/ButtonCapybaraPlay.png');
+}
+
+#CapybaraDance:hover {
+    background-image: url('https://media.tenor.com/bWUeVRqW9-IAAAAi/fast-cat-cat-excited.gif');
+    background-size: cover;
+    background-size: 50px;
+}
+
+#CapybarBath:hover {
+    background-image: url('https://media.tenor.com/pIQ0VzsVXicAAAAd/capybara-bucket.gif');
+    background-size: cover;
+    background-size: 200px;
+    background-position-y: 20%;
+}
+
+#CapybaraNews:hover {
+    background-image: url('https://media.tenor.com/YNp5t_lLA2oAAAAC/breaking-news-news.gif');
+    background-size: cover;
+    background-size: 200px;
+    background-position-y: 50%;
+}
+
+button a:hover {
+    color: transparent;
+}
