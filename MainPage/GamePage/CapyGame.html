@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <title>Capybara Game</title>
     <link id="icon" rel="shortcut icon" href="https://capybaraweb.s3.ap-northeast-2.amazonaws.com/MainPage/Image/CapybaraIcon.png"/>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" type="text/css" href="./StarRail.css">
     <script src="./main.js" defer></script>
+    <script src="./StarRail.js" defer></script>
 </head>
 <body>
-  <button style="position: absolute;" onclick="sss()">애니메이션 보기</button>
-  <button style="position: absolute;" onclick="HideStory()">보기</button>
+  <!--버튼 부분은 테스트 용이니 언젠간 지우셈-->
+  <button style="position: absolute;" onclick="skip()">애니메이션 보기</button>
+  <button style="position: absolute;" onclick="CapybaraTransFormBack()">보기</button>
 
   <div class="GameScreen">
     <div class="StartScreen">
@@ -18,26 +21,59 @@
       <button id="GameStartButton" onclick="GameStart()">GameStart</button>
     </div>
 
-    <div class="RPGScreen">
-      <img id="RPGCharacter" src="./RpgImage/testCapy.png" alt="">
-      <img id="CapybaraSword" src="./RpgImage/DiamondSword.png" alt="">
+    <div id="RPGScreen" class="cRPGScreen">
+      <img id="RPGCharacter" src="./RpgImage/testCapy.png">
+      <img id="CapybaraSword" src="./RpgImage/DiamondSword.png">
       <img id="CapybaraHat" src="./RpgImage/CapybaraHat.png">
-      <img id="KingCapybara" src="./RpgImage/KingCapybara.png" alt="">
-      <img id="HatuneCapybara" src="./RpgImage/HatuneCapybara.png" alt="">
+      <img id="KingCapybara" src="./RpgImage/KingCapybara.png">
+      <img id="HatuneCapybara" src="./RpgImage/HatuneCapybara.png">
+      <img id="HatuneHand" src="./RpgImage/HatuneHand.png" alt="헉">
+      <img id="GravityEffect" src="./RpgImage/GravityEffect.png">
 
-      <div onclick="ShowText()" class="RpgStory">
+      <div id="CapybaraStory" class="cStoryBox" onclick="ShowText()">
         <img id="StoryBox" src="./RpgImage/StroyBox.png">
         <p id="StoryText"></p>
         <h6 id="StoryCapybara">카피바라</h6>
         <div class="triangle"></div>
       </div>
 
-      <div onclick="tMaWangShowText()" class="MaWangSee">
-        <img id="MaWangStoryBox" src="./RpgImage/StroyBox.png" alt="">
+      <!-- <div id="MaWangSee" onclick="tMaWangShowText()" class="cStoryBox" class="MaWangSee"> -->
+      <div id="MaWangSee" onclick="tMaWangShowText()" class="cStoryBox">
+        <img id="MaWangStoryBox" src="./RpgImage/StroyBox.png">
         <p id="MaWangStoryText"></p>
-        <h6 id="MaWangStoryName">ㅇㅇㅇ</h6>
+        <h6 id="MaWangStoryName"></h6>
+        <div class="triangle"></div>
+      </div>
+
+      <!-- <div id="MaWangAttack" class="MaWangAttack" onclick="tMW_AttackShowText()"> -->
+      <div id="MaWangAttack" class="cStoryBox" onclick="tMW_AttackShowText()">
+        <img id="MaWangAttackStoryBox" src="./RpgImage/StroyBox.png" alt="">
+        <p id="MaWangAttackText"></p>
+        <h6 id="MaWangAttackName">하츠네 카피바라</h6>
+        <div class="triangle"></div>
+      </div>  
+
+    </div>
+
+    <div id="CapybaraTrans" class="cCapybaraTrans">
+      <img id="GlitterEffect" src="./RpgImage/pngegg.png">
+      <img id="TrailblazerCapybara" src="./RpgImage/TransformCapybara.png">
+      <img id="TrailblazerHair" src="./RpgImage/TrailblazerHair.png">
+      <img id="TrailblazerWeapon" src="./RpgImage/TransformCapybaraWeapon.png">
+      <h1 id="qus">변</h1>
+      <h1 id="tls">신</h1>
+      <img id="Heart" src="./RpgImage/Heart.png" alt="">
+    </div>
+
+    <div> <!--스타레일-->
+      <div id="SRTrailblazerCapybara" class="cSRTrailblazerCapybara">
+        <img id="TrailblazerCapybaraBody" src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img id="TrailblazerCapybaraHair" src="./StarRail_Image/TrailblazerCapybaraHair.png">
+        <img id="TrailblazerCapybaraHand" src="./StarRail_Image/TrailblazerCapybaraHand.png">
+        <img id="TrailblazerCapybaraWeapon" src="./StarRail_Image/TrailblazerCapybaraWeapon.png">
       </div>
     </div>
-  </div>
+
+  </div> <!--게임스크린 부분임-->
 </body>
 </html> 

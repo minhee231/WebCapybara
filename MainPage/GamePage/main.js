@@ -1,3 +1,8 @@
+function delay(time, callback) 
+{
+  setTimeout(callback, time*1000);
+}
+//================================================================
 const button = document.getElementById("GameStartButton");
 
 button.onmouseover = function() {
@@ -11,7 +16,8 @@ button.onmouseout = function() {
 
 const StartScreen = document.getElementsByClassName("StartScreen")[0];
 const GameScreen = document.getElementsByClassName("GameScreen")[0];
-const RPGScreen = document.getElementsByClassName('RPGScreen')[0];
+// const RPGScreen = document.getElementsByClassName('RPGScreen')[0];
+const RPGScreen = document.getElementById('RPGScreen');
 function GameStart() //게임 시작 버튼 누름
 {
     StartScreen.style.display = "none";
@@ -33,19 +39,18 @@ let RpgCharacterHatX = -650;
 let RpgCharacterSword = 500;
 let DirectionRight = true;
 
-function handleKeyDown(event) 
+function handleKeyDown(event) //캐릭터 움직이는 함수
 {
   const step = 10;
   const key = event.key;
 
   if (event.code == "Space")
   {
-    console.log(DirectionRight);
     MoveRightSword();
     MoveLeftSword();
   }
 
-  if (RpgCharacterMoveX == 780)
+  if (RpgCharacterMoveX == 760)
   {
     if (_stop) return;
 
@@ -104,11 +109,6 @@ function handleKeyUp(event)
 document.addEventListener("keydown", handleKeyDown);
 document.addEventListener("keyup", handleKeyUp);
 
-// document.addEventListener("keydown", function(event) {
-//   console.log(event.code);
-// });  
-//이벤트 키 확인임 언젠간 지우셈
-
 function MoveLeftSword()
 {
   if (DirectionRight) return;
@@ -141,13 +141,12 @@ let text;
 
 const _StoryText = document.getElementById("StoryText");
 const StoryText = ['','나는 카피바라다.','나는 왕도 아니고, 신도 아니고 카피바라다.','마왕에게 납치 당한 하츠네 카피바라를 구하기 위해 마왕의 성으로 가는 길이다.','못된 마왕! 내가 꼭 잡아내고 말거야!!!','A,D 키를 눌러 마왕의 성으로 가자' , '스페이스바를 누르면 공격도 가능하지! ']
-console.log(StoryText.length)
+const CapybaraStory = document.getElementById('CapybaraStory');
 
 function showText() 
 {
   text = StoryText[StoryIndex];
 
-  console.log(text);
   document.getElementById("StoryText").textContent += StoryText[StoryIndex].charAt(index);
   index++;
   if (index >= text.length) 
@@ -160,7 +159,8 @@ function ShowText()
 {
   if (text == '스페이스바를 누르면 공격도 가능하지! ')
   {
-    document.getElementsByClassName("RpgStory")[0].style.display = 'none';
+    // document.getElementsByClassName("RpgStory")[0].style.display = 'none';
+    CapybaraStory.style.display = 'none';
     StoryCheck = true;
     return;
   }
@@ -172,33 +172,53 @@ function ShowText()
   StoryIndex++;
   index = 0;
   timer = setInterval((showText), interval); 
-  console.log(StoryIndex);
 }
 
-const MaWangSee = document.getElementsByClassName("MaWangSee");
+// const MaWangSee = document.getElementsByClassName("MaWangSee");
+const MaWangSee = document.getElementById("MaWangSee");
 const MaWangStoryBox = document.getElementById("MaWangStoryBox");
 const StoryBox = document.getElementById("StoryBox");
 const MaWangStoryName = document.getElementById('MaWangStoryName');
 const HatuneCapybara = document.getElementById('HatuneCapybara')
+const HatuneGravityEffect = document.getElementById('GravityEffect');
+const HatuneHand = document.getElementById('HatuneHand');
+const MaWangAttack = document.getElementById('MaWangAttack');
 
-console.log(MaWangSee);
 
-function MaWang()
+function MaWang() //마왕에게 가까워졌을 때 이벤트
 {
-  document.getElementsByClassName("RpgStory")[0].style.display = 'none';
-  MaWangSee[0].style.display = 'block';
-  MaWangStoryBox.style.display = 'block';
-  MaWangStoryName.style.display = 'block';
+  CapybaraStory.style.display = 'none';
+  MaWangSee.style.display = 'block';
   HatuneCapybara.classList.add('HatuneKaiTen');
-  HatuneCapybara.style.
+  HatuneCapybara.style.left = '1000px';
+  HatuneCapybara.style.top = '-200px'
   tMaWangShowText();
 }
 
-// MaWangSee[0].addEventListener("click",tMaWangShowText());
+characterSword.addEventListener('animationend', function(event) {
+  if (event.animationName === 'StoryAttack')
+  {
+    HatuneGravityEvent();
+  }
+});
 
+function HatuneGravityEvent()
+{
+  HatuneHand.style.display = 'block';
+  HatuneGravityEffect.style.display = 'block';
+  HatuneCapybara.classList.remove('HatuneKaiTen');
+  HatuneCapybara.classList.add('HatuneFastKaiTen');
+  HatuneCapybara.style.left = '850px';
+  HatuneCapybara.style.top = '50px';
+  // document.getElementsByClassName('MaWangAttack')[0].style.display = 'block';
+  MaWangAttack.style.display = 'block';
 
+  tMW_AttackShowText();
+}
+
+//마왕 조우 했을 때 대사 띄우는 거
 const _MaWangStoryText = document.getElementById("MaWangStoryText");
-const MaWangStoryText = ['','잠깐!!.','??','너 혹시 하츠네 카피바라를 데리러 왔나?','YesYesYes~','그럼 나와 싸우자!','그래 알겠디~'];
+const MaWangStoryText = ['','잠깐!!','??','너 혹시 하츠네 카피바라를 데리러 왔나?','YesYesYes~','그럼 나와 싸우자!','그래 알겠디~'];
 
 let MaWangIndex = 0;
 let MaWangStoryIndex = 0;
@@ -209,7 +229,6 @@ function MaWangShowText()
 {
   MaWangText = MaWangStoryText[MaWangStoryIndex];
 
-  console.log(MaWangText);
   document.getElementById("MaWangStoryText").textContent += MaWangStoryText[MaWangStoryIndex].charAt(MaWangIndex);
   MaWangIndex++;
   if (MaWangIndex >= MaWangText.length) 
@@ -218,11 +237,11 @@ function MaWangShowText()
   }
 }
 
-function tMaWangShowText() 
+function tMaWangShowText() //마지막 대사
 {
-  if (MaWangText == '그래 알겠디~') //스토리 마지막 이벤트 실행
+  if (MaWangText == '그래 알겠디~')
   {
-    document.getElementsByClassName("MaWangSee")[0].style.display = 'none';
+    MaWangSee.style.display = 'none';
     characterSword.classList.remove("SwordRightAttack");
     characterSword.classList.remove("SwordLeftAttack");
     characterSword.offsetWidth = characterSword.offsetWidth;
@@ -255,9 +274,123 @@ function MaWangStoryNameShow()
   }
 }
 
-function sss() //없애도 됨
+
+//마왕이 공격 받아치는 이벤트 후 대사
+const MaWangAttackName = document.getElementById('MaWangAttackName');
+const _MaWangAttackStoryText = document.getElementById("MaWangAttackText");
+const MaWangAttackStoryText = ['','으아아아아아악!','하...하츠네 카피바라!!!!','크하하하하하','평범한 카피바라는 아무것도 할 수 없지','그렇다면!!!!'];
+
+let MW_AttackIndex = 0;
+let MW_AttackStoryIndex = 0;
+let MW_AttackText;
+let MW_AttackTimer;
+
+function MW_AttackShowText() 
 {
-  // document.getElementsByClassName('RPGScreen')[0].add("Jineip");
-  // document.getElementById('RPGCharacter').classList.add("Jineip");
-  document.getElementsByClassName('GameScreen')[0].classList.add("Jineip");
+  MW_AttackText = MaWangAttackStoryText[MW_AttackStoryIndex];
+
+  _MaWangAttackStoryText.textContent += MaWangAttackStoryText[MW_AttackStoryIndex].charAt(MW_AttackIndex);
+  MW_AttackIndex++;
+  if (MW_AttackIndex >= MW_AttackText.length) 
+  {
+    clearInterval(MW_AttackTimer);
+  }
 }
+
+function tMW_AttackShowText() 
+{
+  if (MW_AttackText == '그렇다면!!!!') //스토리 마지막 이벤트 실행
+  {
+    MaWangAttack.style.display = 'none'
+    RPGScreen.style.display = 'none';
+    CapybaraTransFormBack();
+
+    
+    return;
+  }
+
+  MW_AttackNameShow(); //이름 바꾸는 함수
+
+  if (MW_AttackStoryIndex >= MaWangAttackStoryText.length-1) return;
+  _MaWangAttackStoryText.textContent = "";
+  const interval = 100;
+  
+  MW_AttackStoryIndex++;
+  MW_AttackIndex = 0;
+  MW_AttackTimer = setInterval((MW_AttackShowText), interval); 
+} 
+
+
+function MW_AttackNameShow()
+{
+  MaWangAttackStoryText.textContent = '';
+
+  if (MW_AttackStoryIndex == 1 || MW_AttackStoryIndex == 4)
+  {
+    MaWangAttackName.textContent = '카피바라';
+  }
+  else if (MW_AttackStoryIndex == 2 || MW_AttackStoryIndex == 3)
+  {
+    MaWangAttackName.textContent = '마왕 카피바라';
+  }
+
+}
+
+//변신 장면 백그라운드 애니메이션
+let CapybaraTransFormBackground = -100;
+let CapybaraTransFormTimer;
+const CapybaraTransFormCooltime = 0.7;
+const TrailblazerCapybara = document.getElementById('TrailblazerCapybara');
+const TrailblazerHair = document.getElementById('TrailblazerHair');
+const TrailblazerWeapon = document.getElementById('TrailblazerWeapon');
+const Heart = document.getElementById('Heart');
+const qus = document.getElementById('qus');
+const tls = document.getElementById('tls');
+
+function CapybaraTransFormBack()
+{
+  GameScreen.style.background = `linear-gradient(to right, #FFB6CD ${CapybaraTransFormBackground}%, #FFDDCD 100%)`;
+  CapybaraTransFormBackground += 0.5;
+  
+  if (CapybaraTransFormBackground <= 100)
+  {
+    setTimeout(CapybaraTransFormBack, CapybaraTransFormCooltime);
+  }
+  else
+  {
+    document.getElementById('TrailblazerCapybara').style.display = 'block';
+    document.getElementById('GlitterEffect').style.display = 'block';
+  }
+}
+
+function tCapybaraTransFormBack() 
+{
+  setTimeout(CapybaraTransFormBack, CapybaraTransFormCooltime);
+}
+
+function skip()
+{
+  document.getElementById('TrailblazerCapybara').style.display = 'block';
+  document.getElementById('GlitterEffect').style.display = 'block';
+}
+
+//개척자 카피바라 요소 하나씩 등장
+TrailblazerCapybara.addEventListener('animationend', function(event) {
+  TrailblazerHair.style.display = 'block';
+});
+
+TrailblazerHair.addEventListener('animationend', function(event) {
+  TrailblazerWeapon.style.display = 'block';
+});
+
+TrailblazerWeapon.addEventListener('animationend', function(event) {
+  qus.style.display = 'block';
+});
+
+qus.addEventListener('animationend', function(event) {
+  tls.style.display = 'block';
+});
+
+tls.addEventListener('animationend', function(event) {
+  Heart.style.display = 'block';
+});

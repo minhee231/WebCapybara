@@ -1,0 +1,24 @@
+body {
+    padding: 0;
+    margin: 0;
+    background: #000;
+    height: 100vh;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  #demo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: auto;
+    height: auto;
+    max-height: 80%;
+    max-width: 80%;
+    cursor: pointer;
+  }
+  
+  
+  

@@ -1,0 +1,10 @@
+.cSRTrailblazerCapybara img {
+    transform: scale(0.45,0.45);
+}
+
+#TrailblazerCapybaraWeapon {
+    left: 240px;
+    top: -120px;
+}
+
+
