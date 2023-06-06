@@ -5,8 +5,15 @@
     <link id="icon" rel="shortcut icon" href="https://capybaraweb.s3.ap-northeast-2.amazonaws.com/MainPage/Image/CapybaraIcon.png"/>
     <title>Capybara Quiz</title>
     <link rel="stylesheet" type="text/css" href="./main.css">
+    <script src="./main.js" defer></script>
 </head>
 <body>
-    <h1>QuizPage</h1>
+    <div id="Quiz1" class="cQuiz">
+        <img src="./Image/Quiz1.jpg">
+        <img id="Quiz1YesIMG" src="./Image/Quiz1yes.jpg">
+        <h1 id="QZ1">Capybara is cute?</h1>
+        <button id="QZ1_Yes" onclick="Quiz1YesButton()" class="YesBT">YES</button>
+        <button id="QZ1_no" onclick="Quiz1NoButton()" class="NoBT">NO</button>
+    </div>
 </body>
 </html>
