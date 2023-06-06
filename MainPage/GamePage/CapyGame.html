@@ -11,12 +11,12 @@
 </head>
 <body>
   <!--버튼 부분은 테스트 용이니 언젠간 지우셈-->
-  <button style="position: absolute;" onclick="skip()">애니메이션 보기</button>
-  <button style="position: absolute;" onclick="CapybaraTransFormBack()">보기</button>
+  <button style="position: absolute;" onclick="tEndingStoryShowText()">애니메이션 보기</button>
+  <button style="position: absolute;" onclick="DanHengSkillAttack()">보기</button>
 
   <div class="GameScreen">
     <div class="StartScreen">
-      <img id="ArmorCapybara" src="./StartScreenImage/StartIcon.png" alt="">
+      <img id="ArmorCapybara" src="./StartScreenImage/StartIcon.png">
       <h2>CapybaraRPG</h2>
       <button id="GameStartButton" onclick="GameStart()">GameStart</button>
     </div>
@@ -27,7 +27,7 @@
       <img id="CapybaraHat" src="./RpgImage/CapybaraHat.png">
       <img id="KingCapybara" src="./RpgImage/KingCapybara.png">
       <img id="HatuneCapybara" src="./RpgImage/HatuneCapybara.png">
-      <img id="HatuneHand" src="./RpgImage/HatuneHand.png" alt="헉">
+      <img id="HatuneHand" src="./RpgImage/HatuneHand.png">
       <img id="GravityEffect" src="./RpgImage/GravityEffect.png">
 
       <div id="CapybaraStory" class="cStoryBox" onclick="ShowText()">
@@ -37,7 +37,6 @@
         <div class="triangle"></div>
       </div>
 
-      <!-- <div id="MaWangSee" onclick="tMaWangShowText()" class="cStoryBox" class="MaWangSee"> -->
       <div id="MaWangSee" onclick="tMaWangShowText()" class="cStoryBox">
         <img id="MaWangStoryBox" src="./RpgImage/StroyBox.png">
         <p id="MaWangStoryText"></p>
@@ -45,9 +44,8 @@
         <div class="triangle"></div>
       </div>
 
-      <!-- <div id="MaWangAttack" class="MaWangAttack" onclick="tMW_AttackShowText()"> -->
       <div id="MaWangAttack" class="cStoryBox" onclick="tMW_AttackShowText()">
-        <img id="MaWangAttackStoryBox" src="./RpgImage/StroyBox.png" alt="">
+        <img id="MaWangAttackStoryBox" src="./RpgImage/StroyBox.png">
         <p id="MaWangAttackText"></p>
         <h6 id="MaWangAttackName">하츠네 카피바라</h6>
         <div class="triangle"></div>
@@ -62,18 +60,130 @@
       <img id="TrailblazerWeapon" src="./RpgImage/TransformCapybaraWeapon.png">
       <h1 id="qus">변</h1>
       <h1 id="tls">신</h1>
-      <img id="Heart" src="./RpgImage/Heart.png" alt="">
     </div>
 
-    <div> <!--스타레일-->
-      <div id="SRTrailblazerCapybara" class="cSRTrailblazerCapybara">
+    <div id="KafkaTrans" class="cCapybaraTrans">
+      <div id="ShockCapybara" class="test">
+      <img id="KafkaKingCapybara" src="RpgImage/KingCapybara.png">
+      <img id="ExclamationMark" src="./RpgImage/ExclamationMark.png">
+      </div>
+      <img id="KafkaCapybara" src="./RpgImage/TransformCapybara.png">
+      <img id="KafkaHair" src="./RpgImage/KafkaHair.png">
+      <img id="KafkaWeapon" src="./StarRail_Image/KafkaCapybaraWeapon.png">
+      <h1 id="rkr">각</h1>
+      <h1 id="tjd">성</h1>
+    </div>
+
+
+    <!--스타레일-->
+    <div id="StarRail" class="cStarRail"> 
+
+      <div id="SRTrailblazerCapybara" class="SRCapybara">
         <img id="TrailblazerCapybaraBody" src="./StarRail_Image/TrailblazerCapybaraBody.png">
         <img id="TrailblazerCapybaraHair" src="./StarRail_Image/TrailblazerCapybaraHair.png">
-        <img id="TrailblazerCapybaraHand" src="./StarRail_Image/TrailblazerCapybaraHand.png">
         <img id="TrailblazerCapybaraWeapon" src="./StarRail_Image/TrailblazerCapybaraWeapon.png">
+        <img id="TrailblazerCapybaraHand" src="./StarRail_Image/TrailblazerCapybaraHand.png">
+
+        <button id="TrailblazerBasicBT" class="round-button Basic-button">일반</button>
+        <button id="TrailblazerSkillBT" class="round-button Skill-button">스킬</button>
+        <h3 class="Damage"></h3>
+
+        <div class="health-bar">
+          <div class="health-fill"></div>
+        </div>
+        
+      </div>
+
+      <div id="SRSeeleCapybara" class="SRCapybara">
+        <img id="SeeleCapybaraBody" src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img id="SeeleCapybaraHand" src="./StarRail_Image/TrailblazerCapybaraHand.png">
+        <img id="SeeleCapybaraHair" src="./StarRail_Image/SeeleCapybaraHair.png">
+        <img id="SeeleCapybaraWeapon" src="./StarRail_Image/SeeleCapybaraWeapon.png">
+
+        <button id="SeeleBasicBT" class="round-button Basic-button">일반</button>
+        <button id="SeeleSkillBT" class="round-button Skill-button">스킬</button>
+        <h3 class="Damage"></h3>
+      </div>
+      
+      <div id="SRDanHengCapybara" class="SRCapybara">
+        <img id="DanHengCapybaraBody" src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img id="DanHengCapybaraHand" src="./StarRail_Image/TrailblazerCapybaraHand.png">
+        <img id="DanHengCapybaraHair" src="./StarRail_Image/DanHengCapybaraHair.png">
+        <img id="DanHengCapybaraWeapon" src="./StarRail_Image/DanHengCapybaraWeapon.png">
+
+        <button id="DanHengBasicBT" class="round-button Basic-button">일반</button>
+        <button id="DanHengSkillBT" class="round-button Skill-button">스킬</button>
+        <h3 class="Damage"></h3>
+      </div>
+
+      <div id="SRMar_7thCapybara" class="SRCapybara">
+        <img id="Mar_7thCapybaraBody" src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img id="Mar_7thCapybaraHand" src="./StarRail_Image/TrailblazerCapybaraHand.png">
+        <img id="Mar_7thCapybaraHair" src="./StarRail_Image/Mar_7thCapybaraHair.png">
+        <img id="Mar_7thCapybaraWeapon" src="./StarRail_Image/Mar_7thCapybaraWeapon.png">
+
+        <button id="Mar_7thBasicBT" class="round-button Basic-button">일반</button>
+        <button id="Mar_7thSkillBT" class="round-button Skill-button">스킬</button>
+        <h3 class="Damage"></h3>
+      </div>
+
+      <h3 id="tjfaud">쉴드를 부여할 캐릭터를 골라 주세요</h3>
+
+      <div id="SRKafkaCapybara" class="SRCapybara">
+        <img id="KafkaCapybaraBody" src="./StarRail_Image/KafkaCapybaraBody.png">
+        <img id="KafkaCapybaraHair" src="./StarRail_Image/KafkaCapybaraHair.png">
+        <img id="KafkaCapybaraHand" src="./StarRail_Image/KafkaCapybaraHand.png">
+        <img id="KafkaCapybaraWeapon" src="./StarRail_Image/KafkaCapybaraWeapon.png">
       </div>
     </div>
 
-  </div> <!--게임스크린 부분임-->
+    <div id="MarShield" class="SRCapybara">
+      <div id="TrailblazerShield">
+        <img src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img src="./StarRail_Image/TrailblazerCapybaraHair.png">
+        <img src="./StarRail_Image/TrailblazerCapybaraHand.png">
+      </div>
+
+      <div id="SeeleShield">
+        <img src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img src="./StarRail_Image/TrailblazerCapybaraHand.png">
+        <img src="./StarRail_Image/SeeleCapybaraHair.png">
+      </div>
+
+      <div id="DanHengShield">
+        <img src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img src="./StarRail_Image/TrailblazerCapybaraHand.png">
+        <img src="./StarRail_Image/DanHengCapybaraHair.png">
+      </div>
+
+      <div id="Mar7thShield">
+        <img src="./StarRail_Image/TrailblazerCapybaraBody.png">
+        <img src="./StarRail_Image/TrailblazerCapybaraHand.png">
+        <img src="./StarRail_Image/Mar_7thCapybaraHair.png">
+      </div>
+    </div>
+
+    <div id="HPbar" class="cHPbar">
+      <img id="HPTrailblazer" src="./StarRail_Image/TrailblazerCapybaraHair.png">
+      <img id="HPSeele" src="./StarRail_Image/SeeleCapybaraHair.png">
+      <img id="HPDanHeng" src="./StarRail_Image/DanHengCapybaraHair.png">
+      <img id="HPMar7th" src="./StarRail_Image/Mar_7thCapybaraHair.png">
+
+        <div id="TrailblazerHPbar" class="health-bar"></div>
+        <div id="SeeleHPbar" class="health-bar"></div>
+        <div id="DanHengHPbar" class="health-bar"></div>
+        <div id="Mar7thHPbar" class="health-bar"></div>
+
+        <div id="KafkaHPbar" class="health-bar"></div>
+    </div>
+
+    <div id="EndingStory" onclick="tEndingStoryShowText()" class="cStoryBox">
+        <img id="EndingStoryBox" src="./RpgImage/StroyBox.png">
+        <p id="EndingStoryText"></p>
+        <h6 id="EndingStoryName">여척자</h6>
+    </div>
+
+    <img id="EasterEgg" src="./RpgImage/HatuneCapybara.png" alt="">
+  </div> <!--게임스크린 마지막 부분임-->
 </body>
 </html> 

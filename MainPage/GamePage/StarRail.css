@@ -1,5 +1,50 @@
-.cSRTrailblazerCapybara img {
+#StarRail, #HPbar {
+    display: none;
+}
+
+.cStarRail div {
+    position: absolute;
+}
+
+.SRCapybara img {
     transform: scale(0.45,0.45);
+    position: absolute;
+}
+/* 쉴드 줄 때 캐릭터 보이게 ========================= */
+#MarShield {
+    position: absolute;
+    display: none;
+    top: -100px;
+}
+
+#TrailblazerShield {
+    position: absolute;
+    z-index: 1;
+    left: -100px;
+}
+
+#SeeleShield {
+    position: absolute;
+    z-index: 1;
+    left: 200px;
+}
+
+#DanHengShield {
+    position: absolute;
+    z-index: 1;
+    left: 500px;
+}
+
+#Mar7thShield {
+    position: absolute;
+    z-index: 1;
+    left: 800px;
+}
+
+/*개척자==============================================*/
+#SRTrailblazerCapybara {
+    left: -300px;
+    /* display: none; */
 }
 
 #TrailblazerCapybaraWeapon {
@@ -7,4 +52,471 @@
     top: -120px;
 }
 
+.TrailblazerBasicAttackBodyHair {
+    animation: TrailblazerBasicAttackBodyHair 3s forwards;
+}
 
+.TrailblazerBasicAttackHand {
+    animation: TrailblazerBasicAttackHand 3s forwards;
+}
+
+.TrailblazerBasicAttackWeapon {
+    animation: TrailblazerBasicAttackWeapon 3s forwards;
+}
+
+.TrailblazerSkillAttackBodyHair {
+    animation: TrailblazerSkillAttackBodyHair 3s forwards;
+}
+
+.TrailblazerSkillAttackHand {
+    animation: TrailblazerSkillAttackHand 3s forwards;
+}
+
+.TrailblazerSkillAttackWeapon {
+    animation: TrailblazerSkillAttackWeapon 3s forwards;
+}
+
+@keyframes TrailblazerBasicAttackWeapon {
+    0% {
+        left: 240px;
+        transform: rotate(45deg) scale(0.45,0.45);
+    }
+
+    20% {
+        left: 900px;
+        transform: rotate(45deg) scale(0.45,0.45);
+    }
+}
+
+@keyframes TrailblazerBasicAttackHand {
+    0%,100% {
+        left: 0px;
+    }
+
+    20% {
+        left: 610px;
+        top: -160px;
+    }
+}
+
+@keyframes TrailblazerBasicAttackBodyHair {
+    0%,100% {
+        left: 0px;
+        top: 0px;
+    }
+
+    20% {
+        left: 600px;
+        top: -130px;
+    }
+}
+
+@keyframes TrailblazerSkillAttackWeapon {
+    20% {
+        left: 1080px;
+        top: -130px;
+        transform: rotate(120deg) scale(0.45,0.45);
+    }
+
+    30% {
+        left: 1080px;
+        top: -130px;
+        transform: rotate(120deg) scale(0.45,0.45);
+    }
+}
+
+@keyframes TrailblazerSkillAttackHand {
+    0%, 100% {
+        left: 0px;
+        top: 0px;
+    }
+    20% {
+        left: 930px;
+        top: -400px;
+    }    
+}
+
+@keyframes TrailblazerSkillAttackBodyHair {
+    0%,100% {
+        left: 0px;
+        top: 0px;
+    }
+
+    20% {
+        left: 900px;
+        top: -400px;
+    }
+}
+/*카프카==============================================*/
+
+#SRKafkaCapybara {
+    left: 800px;
+    top: -200px;
+}
+
+.KafkaCapybara_HandBodyHair {
+    animation: KafkaAttackHand 3s forwards;
+}
+
+.KafkaCapybaraWeapon {
+    animation: KafkaAttackWeapon 3s forwards;
+}
+
+#KafkaCapybaraWeapon {
+    left: 260px;
+    top: 310px;
+}
+
+
+@keyframes KafkaAttackWeapon {
+    30% {
+        left: -750px;
+        top: 300px;
+        transform: rotate(90deg) scale(0.45);
+    }
+
+    50% {
+        left: -700px;
+        top: -100px;
+        transform: rotate(45deg) scale(0.45);
+    }
+}
+
+@keyframes KafkaAttackHand {
+    0% {
+        left: 0px;
+        top: 0px;
+    }
+
+    20% {
+        left: -780px;
+        top: 0px;
+    }
+
+    50% {
+        left: -780px;
+        top: -500px;
+    }
+}
+/*제레==========================================*/
+#SRSeeleCapybara {
+    left: -300px;
+    display: none;
+}
+
+.SeeleBasicAttack_HandBodyHair {
+    animation: SeeleBasicAttackHand 3s forwards;
+}
+
+.SeeleBasicAttackWeapon {
+    animation: SeeleBasicAttackWeapon 3s forwards;
+}
+
+.SeeleSkillAttack_HandBodyHair {
+    animation: SeeleSkillAttackHand 3s forwards;
+}
+
+.SeeleSkillAttackWeapon {
+    animation: SeeleSkillAttackWeapon 3s forwards;
+}
+
+#SeeleCapybaraWeapon {
+    left: 140px;
+    top: -120px;
+}
+
+@keyframes SeeleBasicAttackWeapon {
+    0% {
+        left: 140px;
+        top: -120px;
+    }
+
+    30% {
+        left: 900px;
+        top: -120px;
+        transform: scale(0.45,0.45) rotate(60deg);
+    }
+
+    40% {
+        left: 870px;
+        top: -350px;
+        transform: scale(0.45,0.45) rotate(0deg);
+    }
+}
+
+@keyframes SeeleBasicAttackHand {
+    0%, 100% {
+        left: 0px;
+        top: 0px;
+    }
+
+    30% {
+        left: 800px;
+        top: -120px;
+        transform: scale(0.45,0.45);
+    }
+
+    40% {
+        left: 870px;
+        top: -330px;
+        transform: scale(0.45,0.45);
+    }
+}
+
+@keyframes SeeleSkillAttackWeapon {
+    0% {
+        left: 140px;
+        top: -120px;
+    }
+
+    30% {
+        left: 900px;
+        top: -120px;
+        transform: scale(0.45,0.45) rotate(60deg);
+    }
+
+    40% {
+        left: 870px;
+        top: -350px;
+        transform: scale(0.45,0.45) rotate(0deg);
+    }
+
+    60% {
+        left: 870px;
+        top: -350px;
+        transform: scale(-0.45,0.45) rotate(0deg);
+    }
+
+    80% {
+        left: 900px;
+        top: -120px;
+        transform: scale(-0.45,0.45) rotate(-90deg);
+    }
+}
+
+@keyframes SeeleSkillAttackHand {
+    0% {
+        left: 140px;
+        top: -120px;
+    }
+
+    30% {
+        left: 900px;
+        top: -120px;
+        transform: scale(0.45,0.45);
+    }
+
+    40% {
+        left: 870px;
+        top: -350px;
+        transform: scale(0.45,0.45);
+    }
+
+    60% {
+        left: 870px;
+        top: -350px;
+        transform: scale(-0.45,0.45);
+    }
+
+    80% {
+        left: 900px;
+        top: -120px;
+        transform: scale(-0.45,0.45);
+    }
+}
+
+/*단항========================================*/
+#SRDanHengCapybara {
+    left: -300px;
+    display: none;
+}
+
+#DanHengCapybaraWeapon {
+    left: 140px;
+}
+
+.DanHengBasicAttack_HandBodyHair {
+    animation: DanHengBasicAttackHand 3s forwards;
+}
+
+.DanHengBasicAttackWeapon {
+    animation: DanHengBasicAttackWeapon 3s forwards;
+}
+
+.DanHengSkillAttack_HandBodyHair {
+    animation: DanHengSkillAttackHand 3s forwards;
+}
+
+.DanHengSkillAttackWeapon {
+    animation: DanHengSkillAttackWeapon 3s forwards;
+}
+
+@keyframes DanHengBasicAttackWeapon {
+    20% {
+        left: 880px;
+        top: -90px;
+        transform: scale(0.45,0.45) rotate(50deg);
+    }
+
+    30% {
+        left: 800px;
+        top: -100px;
+        transform: scale(0.45,0.45) rotate(40deg);
+    }
+
+    40% {
+        left: 900px;
+        top: -170px;
+        transform: scale(0.45,0.45) rotate(30deg);
+    }
+
+    100% {
+        left: 140px;
+        top: 0px;
+        transform: scale(0.45,0.45) rotate(0deg);
+    }
+}
+
+@keyframes DanHengBasicAttackHand {
+    20% {
+        left: 800px;
+        top: -90px;
+    }
+
+    30% {
+        left: 700px;
+        top: -120px;
+    }
+
+    40% {
+        left: 800px;
+        top: -160px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+@keyframes DanHengSkillAttackWeapon {
+    20% {
+        left: 880px;
+        top: -90px;
+        transform: scale(0.45,0.45) rotate(50deg);
+    }
+
+    30% {
+        left: 800px;
+        top: -100px;
+        transform: scale(0.45,0.45) rotate(40deg);
+    }
+
+    40% {
+        left: 900px;
+        top: -170px;
+        transform: scale(0.45,0.45) rotate(30deg);
+    }
+
+    50%, 68% {
+        left: 700px;
+        top: -170px;
+        transform: scale(0.45,0.45) rotate(45deg);
+    }
+
+    70%, 75% {
+        left: 1000px;
+        top: -170px;
+        transform: scale(0.45,0.45) rotate(45deg);
+    }
+
+    100% {
+        left: 140px;
+        top: 0px;
+        transform: scale(0.45,0.45) rotate(0deg);
+    }
+}
+
+@keyframes DanHengSkillAttackHand {
+    20% {
+        left: 800px;
+        top: -90px;
+    }
+
+    30% {
+        left: 700px;
+        top: -170px;
+    }
+
+    40% {
+        left: 900px;
+        top: -170px;
+    }
+
+    50%, 68% {
+        left: 700px;
+        top: -170px;
+    }
+
+    70%, 75% {
+        left: 1000px;
+        top: -190px;
+    }
+
+    100% {
+        left: 0px;
+        top: 0px;
+    }
+}
+
+/*삼칠이=========================*/
+#SRMar_7thCapybara {
+    left: -300px;
+    display: none;
+}
+
+.MarBasicAttackWeapon {
+    animation: MarBasicAttackWeapon 3s forwards;
+}
+
+#Mar_7thCapybaraWeapon {
+    left: 310px;
+    width: 700px;
+    top: -140px;
+    transform: scale(0.45,0.45) rotate(-5deg);
+}
+
+@keyframes MarBasicAttackWeapon {
+    from {
+        transform: scale(0.45,0.45) rotate(-5deg);
+    }
+
+    to {
+        transform: scale(0.45,0.45) rotate(3595deg);
+    }
+
+    0%,100% {
+        left: 310px;
+        width: 700px;
+        top: -140px;
+    }
+
+    20% {
+        left: 1300px;
+        top: -300px;
+    }
+}
+
+.KafkaDeath {
+    animation: KafkaDeath 3s forwards;
+}
+
+@keyframes KafkaDeath {
+    from {
+        transform: scale(0.45,0.45);
+    }
+
+    to {
+        transform: scale(0,0);
+    }
+}

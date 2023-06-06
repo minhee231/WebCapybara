@@ -318,7 +318,7 @@ function tMW_AttackShowText()
   MW_AttackStoryIndex++;
   MW_AttackIndex = 0;
   MW_AttackTimer = setInterval((MW_AttackShowText), interval); 
-} 
+}
 
 
 function MW_AttackNameShow()
@@ -333,19 +333,23 @@ function MW_AttackNameShow()
   {
     MaWangAttackName.textContent = '마왕 카피바라';
   }
-
 }
 
 //변신 장면 백그라운드 애니메이션
 let CapybaraTransFormBackground = -100;
-let CapybaraTransFormTimer;
 const CapybaraTransFormCooltime = 0.7;
+
+const CapybaraTrans = document.getElementById('CapybaraTrans');
 const TrailblazerCapybara = document.getElementById('TrailblazerCapybara');
 const TrailblazerHair = document.getElementById('TrailblazerHair');
 const TrailblazerWeapon = document.getElementById('TrailblazerWeapon');
-const Heart = document.getElementById('Heart');
 const qus = document.getElementById('qus');
 const tls = document.getElementById('tls');
+
+
+const KafkaKingCapybara = document.getElementById('KafkaKingCapybara');
+const ExclamationMark = document.getElementById('ExclamationMark');
+
 
 function CapybaraTransFormBack()
 {
@@ -368,7 +372,7 @@ function tCapybaraTransFormBack()
   setTimeout(CapybaraTransFormBack, CapybaraTransFormCooltime);
 }
 
-function skip()
+function skip() //없애도 되는 함수 그냥 내가 볼려고 짠 함수임
 {
   document.getElementById('TrailblazerCapybara').style.display = 'block';
   document.getElementById('GlitterEffect').style.display = 'block';
@@ -392,5 +396,54 @@ qus.addEventListener('animationend', function(event) {
 });
 
 tls.addEventListener('animationend', function(event) {
-  Heart.style.display = 'block';
+  KafkaKingCapybara.style.display = 'block';
+});
+
+KafkaKingCapybara.addEventListener('animationend', function(event) {
+  ExclamationMark.style.display = 'block';
+});
+
+ExclamationMark.addEventListener('animationend', tKafkaCapybaraTransFormBack);
+
+
+let KafkaBackground = -100;
+// const KafkaBG_Cooltime = 0.7
+
+const KafkaCapybara = document.getElementById('KafkaCapybara');
+const KafkaHair= document.getElementById('KafkaHair');
+const KafkaWeapon = document.getElementById('KafkaWeapon');
+const ShockCapybara = document.getElementById('ShockCapybara');
+const rkr = document.getElementById('rkr');
+const tjd = document.getElementById('tjd');
+function KafkaCapybaraTransFormBack()
+{
+  GameScreen.style.background = `linear-gradient(to left, #594ACE ${KafkaBackground}%, #251E54 100%)`;
+  KafkaBackground += 0.5;
+  
+  if (KafkaBackground <= 100)
+  {
+    setTimeout(KafkaCapybaraTransFormBack, CapybaraTransFormCooltime);
+  }
+  else
+  {
+    //배경 다 채워지면 객체 보이게 하는거~
+    KafkaCapybara.style.display = 'block';
+    KafkaHair.style.display = 'block';
+    KafkaWeapon.style.display = 'block';
+  }
+}
+
+function tKafkaCapybaraTransFormBack() 
+{
+  CapybaraTrans.style.display = 'none';
+  ShockCapybara.style.display = 'none';
+  setTimeout(KafkaCapybaraTransFormBack, CapybaraTransFormCooltime);
+}
+
+KafkaWeapon.addEventListener('animationend', function(event) {
+  rkr.style.display = 'block';
+});
+
+KafkaWeapon.addEventListener('animationend', function(event) {
+  tjd.style.display = 'block';
 });

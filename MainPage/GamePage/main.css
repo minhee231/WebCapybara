@@ -6,7 +6,7 @@ html,
 body {
   height: 100%;
   background-color: #1F1F1F;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 body {
@@ -46,7 +46,7 @@ p , body{
 .GameScreen {
   background-color: gray;
   background-image: url('./StartScreenImage/BackGround.jpg');
-  background-image: url('./StarRail_Image/StarRailBackGround.png');
+  /* background-image: url('./StarRail_Image/KafkaBackground.png'); */
   /* background-image: url('./StarRail_Image/StarRailBackGround.png'); */
   background-size: cover;
   display: flex;
@@ -387,7 +387,6 @@ p , body{
   font-family: NeoDunggeunmoPro-Regular;
   transform: scale(7,7);
   top: 35%;
-  
   animation: FontScale 1.5s forwards;
   display: none;
 }
@@ -418,21 +417,6 @@ p , body{
   left: 550px;
   top: -250px;
   animation: TrailblazerdWeapon 2s forwards;
-}
-
-#Glass {
-  transform: scale(0.5,0.3);
-  top: -290%;
-  left: -200%;
-  opacity: 0.8;
-  animation: GlassBreaking 1s forwards;
-}
-
-#Heart {
-  width: 600px;
-  left: 33%;
-  top: 150px;
-  animation: Heart 2s forwards;
 }
 
 #GlitterEffect {
@@ -473,23 +457,222 @@ p , body{
   100% { transform: scale(7,7);}
 }
 
-@keyframes Heart {
-  0% {
-    opacity: 0;
-    width: 0px;
-  }
-  70% {
-    top: 10px;
-    left: 15%;
-    opacity: 0.8;
-    width: 1200px;
-  }
-  100% {
-    top: 10px;
-    left: 15%;
-    opacity: 0.8;
-    width: 1200px;
-  }
+/*==============================*/
+.test img {
+  display: none;
 }
 
-/*==============================*/
+#KafkaTrans {
+  position: absolute;
+}
+
+#KafkaKingCapybara {
+  transform: scale(0.7,0.7) scaleX(-1);
+  left: 1300px;
+  top: 400px;
+  animation: KingCapybara 1s forwards;
+}
+
+#ExclamationMark {
+  width: 300px;
+  left: 1300px;
+  top: 300px;
+  animation: Exclamation 1.3s forwards;
+}
+
+@keyframes KingCapybara {
+  from {left: 1300px;}
+  to {left: 1300px;}
+}
+
+@keyframes Exclamation {
+  0% {width: 700px;}
+  29% {width: 700px;}
+  30% {width: 300px;}
+  100% {width: 300px;}
+}
+
+
+#KafkaCapybara {
+  left: 650px;
+  top: 150px;
+  animation: KafkaCapybara 3s forwards;
+}
+
+#KafkaHair {
+  left: 680px;
+  width: 300px;
+  /* top: 120px; */
+  top: 900px;
+  animation: KafkaHair 5s forwards;
+}
+
+#KafkaWeapon {
+  left:850px;
+  top: 300px;
+  width: 500px;
+  animation: KafkaWeapon 5.5s forwards;
+}
+
+#rkr {
+  position: absolute;
+  left: 300px;
+  top: 300px;
+}
+
+#tjd {
+  position: absolute;
+  left: 1200px;
+  top: 300px;
+}
+
+@keyframes KafkaCapybara {
+  from { width: 0px; }
+  to { width: 360px; }
+}
+
+@keyframes KafkaHair {
+  0% { top: 900px; }
+
+  80% { top: 90px}
+  90% { top: 90px}
+  100% { top: 120px; }
+}
+
+@keyframes KafkaWeapon {
+  0% { left: 0px; transform: rotate(-45deg);}
+
+  10% {left: 1800px; transform: rotate(-45deg);}
+}
+
+.round-button {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #1f1f1f;
+  font-size: 1em;
+  color: #fff;
+  top: 600px;
+  opacity: 0.8;
+}
+
+.Basic-button {
+  left: 1400px;
+}
+
+.Skill-button {
+  left: 1700px;
+}
+
+#tjfaud {
+  display: none;
+  position: absolute;
+  /* color: ; */
+  left: 450px;
+  font-size: 1em;
+  z-index: 2;
+}
+
+/* 체력바 */
+.health-bar {
+  position: absolute;
+  top: 200px;
+  width: 180px;
+  height: 20px;
+  border: 1px solid #000;
+  /* background-color: #0f0; */
+  /* background: linear-gradient(to right #0f0 50%, red 0%); */
+  background: linear-gradient(to right, #0f0 100%, red 0%);
+
+}
+
+
+
+.cHPbar img {
+  position: absolute;
+  transform: scale(0.45,0.45);
+  top: -300px;
+}
+
+#TrailblazerHPbar {
+  position: absolute;
+  z-index: 0;
+  left: 50px;
+}
+
+#SeeleHPbar {
+  position: absolute;
+  z-index: 0;
+  left: 250px;
+}
+
+#DanHengHPbar {
+  position: absolute;
+  z-index: 0;
+  left: 450px;
+}
+
+#Mar7thHPbar {
+  position: absolute;
+  z-index: 0;
+  left: 650px;
+}
+
+#KafkaHPbar {
+  position: absolute;
+  z-index: 0;
+  top: 450px;
+  left: 1300px;
+}
+
+#HPTrailblazer {
+  left: -350px;
+  z-index: 0;
+}
+
+#HPSeele {
+  left: -170px;
+  z-index: 0;
+}
+
+#HPDanHeng {
+  left: 20px;
+  z-index: 0;
+}
+
+#HPMar7th {
+  left: 250px;
+  z-index: 0;
+}
+
+#EndingStory
+{
+  display: none;
+}
+
+#EndingStoryName {
+  left: 20%;
+}
+
+#EasterEgg {
+  display: none;
+  position: absolute;
+  width: 300px;
+  right: 100px;
+  top: 810px;
+}
+
+#EasterEgg:hover {
+    animation: EasterEgg 2s forwards;
+}
+
+@keyframes EasterEgg {
+  from {
+    top: 810px;
+  }
+  
+  to {
+    top: 600px;
+  }
+}
