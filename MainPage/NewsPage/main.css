@@ -1,0 +1,87 @@
+body {
+    background-color: #1f1f1f;
+    overflow: hidden;
+}
+
+#NewDesk {
+    position: absolute;
+    top: -100px;
+}
+
+#AnaCapybara {
+    position: absolute;
+    left: 750px;
+    top: 230px;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    top: 300px;
+    margin-top: 150px;
+    z-index: 1;
+}
+
+#HoDDuck {
+    position: absolute;
+    left: 600px;
+    top: 460px;
+    width: 250px;
+    animation: HoDDuck 1s forwards;
+}
+
+.cHoDDuckEat img {
+    position: absolute;
+    width: 250px;
+    left: 800px;
+    top: 400px;
+    display: none;
+}
+
+@keyframes HoDDuck {
+    from {
+        left: 600px;
+        top: -100px;
+    }
+
+    to {
+        left: 600px;
+        top: 460px;
+    }
+}
+
+#MomBody {
+    position: absolute;
+
+}
+
+#MomMaid {
+    position: absolute;
+    width: 900px;
+    left: -270px;
+    top: 150px;
+    height: 300px;
+}
+
+#MomCapybara {
+    position: absolute;
+    left: -500px;
+    display: none;
+    animation: ShowMom 3s forwards;
+}
+
+#MomCapybaraText {
+    position: absolute;
+    top: -200px;
+    color: antiquewhite;
+}
+
+@keyframes ShowMom {
+    from {
+        left: -500px;
+    }
+
+    to {
+        left: 0px;
+    }
+}

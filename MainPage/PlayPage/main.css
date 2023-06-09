@@ -1,0 +1,144 @@
+body {
+    /* background-color: #1f1f1f; */
+    background-image: url('./Image/TennisCourt.png');
+    background-size: cover;
+    background-position-y: -140px;
+    overflow: hidden;
+}
+
+.TennisCapybara {
+    position: absolute;
+}
+
+.TennisCapybara img {
+    position: absolute;
+    width: 300px;
+}
+
+
+/* Left============================================================ */
+#leftCapybara {
+    left: 300px;
+    top: 400px;
+}
+
+#leftCapybaraRacket {
+    transform: scaleX(-1) rotate(20deg);
+    left: 120px;
+    top: -100px;
+}
+
+.LeftRacket {
+    animation: LeftRacket 0.5s forwards;
+}
+
+@keyframes LeftRacket {
+    0% {
+        transform: scaleX(-1) rotate(160deg);
+        left: -140px;
+        top: 40px;
+    }
+    
+    50% {
+        transform: scaleX(-1);
+        left: 120px;
+        top: -120px;
+    }
+    
+    100% {
+        transform: scaleX(-1) rotate(20deg);
+        left: 120px;
+        top: -100px;
+    }
+}
+
+/*Right============================================================ */
+
+#rightCapybara {
+    transform: scaleX(-1);
+    left: 1600px;
+    top: 400px;
+}
+
+#rightCapybaraRacket {
+    transform: scaleX(-1) rotate(20deg);
+    left: 120px;
+    top: -100px;
+}
+
+.RightRacket {
+    animation: RightRacket 0.5s forwards;
+}
+
+@keyframes RightRacket {
+    0% {
+        transform: scaleX(-1) rotate(160deg);
+        left: -140px;
+        top: 40px;
+    }
+    
+    50% {
+        transform: scaleX(-1);
+        left: 120px;
+        top: -120px;
+    }
+    
+    100% {
+        transform: scaleX(-1) rotate(20deg);
+        left: 120px;
+        top: -100px;
+    }
+}
+
+
+/* 테니스 볼=========================================================== */
+
+#TennisBall {
+    position: absolute;
+    width: 100px;
+
+    left: 250px;
+    top: 400px;
+}
+
+.Ball_1_Left {
+    animation: Ball_1_Left 1s forwards;
+}
+
+.Ball_1_Right {
+    animation: Ball_1_Right 1s forwards;
+}
+
+@keyframes Ball_1_Left {
+    from {
+        left: 250px;
+        top: 400px;
+    }
+
+    50% {
+        left: 900px;
+        top: 20px;
+    }
+
+    to {
+        left: 1600px;
+        top: 400px;
+    }
+}
+
+@keyframes Ball_1_Right {
+    from {
+        left: 1600px;
+        top: 400px;
+    }
+
+    50% {
+        left: 900px;
+        top: 20px;
+    }
+
+    to {
+        left: 250px;
+        top: 400px;
+    }
+}
