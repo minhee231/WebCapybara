@@ -557,6 +557,10 @@ p , body{
   opacity: 0.8;
 }
 
+.round-button:hover {
+  filter: brightness(50%);
+}
+
 .Basic-button {
   left: 1400px;
 }

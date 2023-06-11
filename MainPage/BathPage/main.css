@@ -1,0 +1,41 @@
+body {
+    /* background-color: #1f1f1f; */
+    background-image: url('./Image/SpaBackground.png');
+    background-size: cover;
+}
+
+img {
+    position: absolute;
+}
+
+#SwimCapybara {
+    left: 300px;
+    width: 400px;
+    top: 600px;
+    animation: SwimMove 30s infinite forwards;
+}
+
+@keyframes SwimMove {
+    from {
+        left: 300px;
+        transform: scaleX(1);
+    }
+
+    49% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        left: 1400px;
+        transform: scaleX(-1);
+    }
+
+    99% {
+        transform: scaleX(-1);
+    }
+
+    to {
+        left: 300px;
+        transform: scaleX(1);
+    }
+}

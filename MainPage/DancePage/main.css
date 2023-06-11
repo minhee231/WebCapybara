@@ -2,3 +2,55 @@ body {
     background-color: #1f1f1f;
 }
 
+img, div {
+    position: absolute;
+}
+
+#DjTools {
+    z-index: 1;
+}
+
+#Capybaras {
+    z-index: 0;
+}
+
+#DjBall {
+    width: 200px;
+    left: 900px;
+}
+
+#DjTable {
+    width: 1000px;
+    left: 500px;
+    top: 600px;
+}
+
+#Keyboard {
+    left: 800px;
+    top: 350px;
+}
+
+#KaiTenCapybara {
+    left: 100px;
+    top: 600px;
+}
+
+#DanceingCapybara {
+    left: 500px;
+    top: 150px;
+}
+
+#Danceing2Capybara {
+    left: 1200px;
+    top: 100px;
+    transform: scaleX(-1);
+}
+
+#HappyCapybara {
+    left: 1500px;
+    top: 300px;
+}
+
+#MusicCapybara {
+    left: 200px;
+}

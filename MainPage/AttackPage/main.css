@@ -1,3 +1,126 @@
 body {
     background-color: #1f1f1f;
+    overflow: hidden;
+}
+
+img {
+    position: absolute;
+    left: 30%;
+    top: 100px;
+    width: 800px;
+}
+
+h1 {
+    z-index: 1;
+    position: absolute;
+    color: white;
+    font-size: 3em;
+    left: 38%;
+    text-align: center;
+    background-color: darkblue;
+}
+
+p {
+    display: flex;
+    z-index: 3;
+    position: absolute;
+    color: white;
+    font-size: 7em;
+    left: 400px;
+    text-align: center;
+    justify-content: center;
+}
+
+.AttackButton {
+    position: absolute;
+    background-color: gray;
+    width: 600px;
+    height: 100px;
+    font-size: 3em;
+    color: white;
+    left: 35%;
+    top: 80%;
+}
+
+.AttackButton:hover {
+    cursor: pointer;
+    filter: brightness(50%);
+}
+
+#Katana {
+    width: 500px;
+    transform: rotate(-60deg);
+    left: -600px;
+    top: -0px;
+}
+
+.Katana {
+    animation: Katana 0.5s forwards;
+}
+
+#Attack2 {
+    display: none;
+}
+
+#Attack3 {
+    display: none;
+}
+
+#Attack4 {
+    display: none;
+}
+
+#Attack5 {
+    display: none;
+}
+
+.HalfUp {
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0% 50%);
+    animation: UpMove 2s forwards;
+}
+
+.HalfDown {
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0% 100%);
+    animation: DownMove 2s forwards;
+}
+
+#Hand {
+    z-index: 2;
+    width: 600px;
+    left: 900px;
+}
+
+#CapybaraEvent {
+    display: none;
+}
+
+
+@keyframes UpMove {
+    from {
+        top: 100px;
+    }
+
+    to {
+        top: -700px;
+    }
+}
+
+@keyframes DownMove {
+    from {
+        top: 100px;
+    }
+
+    to {
+        top: 1000px;
+    }
+}
+
+@keyframes Katana {
+    from {
+        left: -600px;
+    }
+
+    to {
+        left: 2100px;
+    }
 }
