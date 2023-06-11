@@ -7,4 +7,4 @@
 
 # 배포 방법
 AWS의 S3를 사용해 배포했습니다.  
-[배포과정](https://minhee-goo.tistory.com)
+[배포과정](https://minhee-goo.tistory.com/14)
